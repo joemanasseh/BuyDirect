@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->integer('Rating');
-            $table->string('Review');
+            $table->decimal('rating', 2, 1)->default(0.0); // Changed to decimal for rating
+            $table->text('review')->nullable(); // Changed to text for review
             $table->timestamps();
         });
     }

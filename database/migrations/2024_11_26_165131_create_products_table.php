@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->integer('merge_buy_quantity')->nullable();
             $table->string('merge_buy_city')->nullable();
             $table->string('product_type'); // 'bulk' or 'merge'
+            $table->string('created_by')->nullable(); // Added for audit trail
+            $table->string('updated_by')->nullable(); // Added for audit trail
             $table->timestamps();
         });
     }
