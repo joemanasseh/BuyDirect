@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('merge_buy_quantity')->nullable();
             $table->string('merge_buy_city')->nullable();
             $table->string('product_type'); // 'bulk' or 'merge'
+            $table->json('participants')->nullable(); // Correctly added participants field
             $table->string('created_by')->nullable(); // Added for audit trail
             $table->string('updated_by')->nullable(); // Added for audit trail
             $table->timestamps();
@@ -32,3 +33,4 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('products');
     }
 }
+
